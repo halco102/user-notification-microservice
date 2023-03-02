@@ -1,0 +1,20 @@
+server.port: 8084
+
+spring:
+  data:
+    couchbase:
+      bucket-name: ${COUCHBASE_BUCKET_NAME} #reddit-comment
+      username: ${COUCHBASE_USERNAME} #Admin
+      password: ${COUCHBASE_PASSWORD} #halco1002
+      connection-string: ${COUCHBASE_CONNECTION_STRING} #127.0.0.1
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+
+  #Kafka
+  kafka:
+    bootstrap-servers: ${BOOTSTRAP_SERVER}
+    consumer:
+      group-id: halco
+    listener:
+      ack-mode: RECORD
